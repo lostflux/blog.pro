@@ -1,4 +1,4 @@
-import { hexToRgb } from '../../src/runtime/utils'
+import { hexToRgb } from '../src/runtime/utils'
 import colors from '#tailwind-config/theme/colors'
 
 export default defineNuxtPlugin({
@@ -7,7 +7,10 @@ export default defineNuxtPlugin({
     const appConfig = useAppConfig()
 
     const root = computed(() => {
+      // @ts-ignore
       const primary: Record<string, string> | undefined = colors[appConfig.ui.primary]
+
+      // @ts-ignore
       const gray: Record<string, string> | undefined = colors[appConfig.ui.gray]
 
       return `:root {
