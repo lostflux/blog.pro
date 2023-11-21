@@ -1,0 +1,70 @@
+@use "sass:map";
+
+@function font($name) {
+  $result: map.get($fonts-map, $name);
+  @return $result;
+}
+
+@function font-size($size) {
+  $result: map.get($font-sizes, $size);
+  @return $result;
+}
+
+$fonts-map: (
+  // "sans-serif": "Matter",
+  // "sans-serif": "Calibre",
+  // "sans-serif": "Apercu Pro",
+  // "sans-serif": "Inter",
+  // "sans-serif": "Helvetica",
+  // "sans-serif": "SF Pro Text",
+  // "sans-serif": "Canela",
+  // "sans-serif": "Adelle Regular",
+  "fancy": "Cohere Variable",
+  // "sans-serif": "Cohere Variable",
+  // "sans-serif": "Cohere Regular",
+  "sans-serif": "Graphik",
+  // "sans-serif": "DM Sans",
+  // "sans-serif": "Brandon Grotesk",
+  
+  "monospace": "SF Mono",
+  // "monospace": "Cohere Variable",
+  // "monospace": "Apercu Pro Mono",
+  // "monospace": "DM Mono",
+  // "monospace": "Anek Latin",
+  // "monospace": "Red Hat Mono",
+  // "monospace": "Space Mono",
+
+  "rubik-fade": "Rubik Fade",
+
+  "megrim": "Megrim",
+
+  "fredericka": "Fredericka the Great",
+
+  "macondo": "Macondo",
+
+  "rubik-puddles": "Rubik Puddles",
+
+  "twitch": "Twitch",
+
+  "matter": "Matter",
+
+  "big-heading": "Antique Olive",
+
+  "antique-olive": "Antique Olive",
+
+  "headings": "Antique Olive",
+
+  "anek-latin": "Anek Latin",
+);
+
+$font-sizes: (
+  "xxs": 11px,
+  "xs": 12px,
+  "s": 13px,
+  "m": 14px,
+  "l": 16px,
+  "xl": 19px,
+  "xxl": 21px,
+  "heading": clamp(21px, 5vw, 35px),
+  "big-heading": 80px
+);

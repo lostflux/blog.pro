@@ -43,13 +43,19 @@ const { data: surround } = await useAsyncData(`${route.path}-surround`, () => {
   return queryContent()
     .where({
       _extension: 'md',
-      _path: {
-        [branch.value?.name === 'dev' ? '$eq' : '$ne']: new RegExp('^/dev')
+      // _path: {
+      //   [branch.value?.name === 'dev' ? '$eq' : '$ne']: new RegExp('^/dev')
+      // },
+      // only current category
+      category: {
+        $contains: page.value?.category
       },
       navigation: {
         $ne: false
       }
     })
+    // sort by date
+    // .sort({ date: -1 })
     .only(['title', 'description', '_path'])
     .findSurround(withoutTrailingSlash(route.path))
 })

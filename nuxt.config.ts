@@ -15,21 +15,10 @@ export default defineNuxtConfig({
     '@nuxt/ui-pro',
     process.env.NUXT_GITHUB_TOKEN && ['github:nuxt/ui-pro/.docs#dev', { giget: { auth: process.env.NUXT_GITHUB_TOKEN } }]
   ].filter(Boolean),
-  modules: [
-    '@nuxt/content',
-    'nuxt-og-image',
-    // '@nuxt/devtools',
-    // '@nuxthq/studio',
-    // module,
-    '@nuxt/ui',
-    '@nuxtjs/fontaine',
-    '@nuxtjs/google-fonts',
-    '@nuxtjs/plausible',
-    '@vueuse/nuxt',
-    'nuxt-component-meta',
-    'nuxt-cloudflare-analytics',
-    'modules/content-examples-code'
-  ],
+  modules: ['@nuxt/content', 'nuxt-og-image', // '@nuxt/devtools',
+  // '@nuxthq/studio',
+  // module,
+  '@nuxt/ui', '@nuxtjs/fontaine', '@nuxtjs/google-fonts', '@nuxtjs/plausible', '@vueuse/nuxt', 'nuxt-component-meta', 'nuxt-cloudflare-analytics', 'modules/content-examples-code', '@nuxt/image'],
   runtimeConfig: {
     public: {
       version: pkg.version
@@ -41,6 +30,26 @@ export default defineNuxtConfig({
     safelistColors: excludeColors(colors)
   },
   content: {
+    highlight: {
+      preload: [
+        'bash',
+        'css',
+        'diff',
+        "f#",
+        'html',
+        'ini',
+        'javascript',
+        'julia',
+        'json',
+        'markdown',
+        'php',
+        'python',
+        'scss',
+        'shell',
+        'typescript',
+        'yaml'
+      ]
+    },
     // sources: {
     //   dev: {
     //     prefix: '/dev',
@@ -82,8 +91,6 @@ export default defineNuxtConfig({
     prerender: {
       routes: [
         '/',
-        '/getting-started',
-        '/dev/getting-started',
         '/api/search.json'
       ]
     }
