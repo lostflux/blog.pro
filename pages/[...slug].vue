@@ -11,10 +11,10 @@
     </UPageBody>
 
     <template #right>
-      <UDocsToc :links="page.body.toc.links">
+      <UDocsToc :links="page?.body?.toc?.links">
         <template #bottom>
           <div class="hidden lg:block space-y-6 !mt-6">
-            <UDivider v-if="page.body?.toc?.links?.length" type="dashed" />
+            <UDivider v-if="page?.body?.toc?.links?.length" type="dashed" />
 
             <UPageLinks title="Actions" :links="links" />
           </div>
@@ -28,7 +28,6 @@
 import { withoutTrailingSlash } from 'ufo'
 
 const route = useRoute()
-const { branch } = useContentSource()
 
 definePageMeta({
   layout: 'docs'

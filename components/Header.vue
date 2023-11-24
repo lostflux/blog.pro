@@ -30,14 +30,31 @@
       />
     </template>
 
+    <UDocsToc :links="page?.body?.toc?.links">
+        <template #bottom>
+          <div class="hidden lg:block space-y-6 !mt-6">
+            <UDivider v-if="page?.body?.toc?.links?.length" type="dashed" />
+
+            <UPageLinks title="Actions" :links="links" />
+          </div>
+        </template>
+      </UDocsToc>
+
     <template #panel>
-      <UAsideLinks :links="links" />
+      <!-- <UAsideLinks :links="links" />
 
-      <UDivider type="dashed" class="mt-4 mb-3" />
-
-      <BranchSelect v-if="!route.path.startsWith('/pro')" />
+      <UDivider type="dashed" class="mt-4 mb-3" /> -->
 
       <UNavigationTree :links="mapContentNavigation(navigation)" :multiple="false" default-open />
+      <UDocsToc :links="page?.body?.toc?.links">
+        <template #bottom>
+          <div class="hidden lg:block space-y-6 !mt-6">
+            <UDivider v-if="page?.body?.toc?.links?.length" type="dashed" />
+
+            <UPageLinks title="Actions" :links="links" />
+          </div>
+        </template>
+      </UDocsToc>
     </template>
   </UHeader>
 </template>
@@ -53,13 +70,9 @@ defineProps<{
 const route = useRoute()
 const { metaSymbol } = useShortcuts()
 
-const nav = inject<Ref<NavItem[]>>('navigation')
+// const nav = inject<Ref<NavItem[]>>('navigation')
 
-const navigation = computed(() => {
-  if (route.path.startsWith('/pro')) {
-    return nav.value.find(item => item._path === '/pro')?.children
-  }
+const navigation = await fetchContentNavigation()
 
-  return nav.value.filter(item => !item._path.startsWith('/pro'))
-})
+const { data: page } = await useAsyncData(route.path, () => queryContent(route.path).findOne())
 </script>
