@@ -10,13 +10,13 @@
       <UDocsSurround :surround="surround" />
     </UPageBody>
 
-    <template v-if="page?.body?.toc?.links?.length" #right>
+    <template #right>
       <UDocsToc :links="page.body.toc.links">
         <template #bottom>
           <div class="hidden lg:block space-y-6 !mt-6">
             <UDivider v-if="page.body?.toc?.links?.length" type="dashed" />
 
-            <UPageLinks title="Community" :links="links" />
+            <UPageLinks title="Actions" :links="links" />
           </div>
         </template>
       </UDocsToc>
@@ -43,9 +43,6 @@ const { data: surround } = await useAsyncData(`${route.path}-surround`, () => {
   return queryContent()
     .where({
       _extension: 'md',
-      // _path: {
-      //   [branch.value?.name === 'dev' ? '$eq' : '$ne']: new RegExp('^/dev')
-      // },
       // only current category
       category: {
         $contains: page.value?.category
@@ -60,7 +57,7 @@ const { data: surround } = await useAsyncData(`${route.path}-surround`, () => {
     .findSurround(withoutTrailingSlash(route.path))
 })
 
-const headline = computed(() => findPageHeadline(page.value))
+const headline = computed(() => page.value?.category || "")
 
 useSeoMeta({
   titleTemplate: '%s - Nuxt UI',
@@ -80,27 +77,22 @@ defineOgImage({
 const links = computed(() => [{
   icon: 'i-heroicons-pencil-square',
   label: 'Edit this page',
-  to: `https://github.com/nuxt/ui/edit/dev/docs/content/${branch.value?.name === 'dev' ? page?.value?._file.split('/').slice(1).join('/') : page?.value?._file}`,
+  to: `https://github.com/siavava/blog/edit/content/${page?.value?._file}`,
   target: '_blank'
 }, {
   icon: 'i-heroicons-star',
-  label: 'Star on GitHub',
+  label: 'View on GitHub',
   to: 'https://github.com/nuxt/ui',
   target: '_blank'
-}, {
-  icon: 'i-heroicons-chat-bubble-bottom-center-text',
-  label: 'Chat on Discord',
-  to: 'https://discord.com/channels/473401852243869706/1153996761426300948',
+},{
+  icon: 'i-heroicons-bars-3-bottom-right-solid',
+  label: 'Minimal Version',
+  to: `https://txt.amittai.studio${page.value?._path}`,
   target: '_blank'
-}, {
-  icon: 'i-heroicons-book-open',
-  label: 'Nuxt docs',
-  to: 'https://nuxt.com',
-  target: '_blank'
-}, {
-  icon: 'i-simple-icons-figma',
-  label: 'Figma Kit',
-  to: 'https://www.figma.com/community/file/1288455405058138934/nuxt-ui',
+},{
+  icon: 'i-heroicons-user-minus-solid',
+  label: 'About Me',
+  to: 'https://amittai.studio',
   target: '_blank'
 }])
 </script>

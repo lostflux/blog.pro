@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "@nuxt/ui": "latest"
+    "@nuxt/ui": "latest",
+    "rehype-katex": "^4.0.0",
+    "remark-math": "^5.1.1"
   },
   "scripts": {
     "build": "nuxi build",

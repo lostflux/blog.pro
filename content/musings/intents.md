@@ -3,15 +3,6 @@ title: doing things
 description: Intent in doing things.
 category: musings
 date: 2023-09-05 23:00:00
-
-head:
-  meta:
-    - name: 'keywords'
-      content: 'writing, poetry, moments, darkness'
-    - name: 'robots'
-      content: 'index, follow'
-    - name: 'author'
-      content: 'Amittai'
 ---
 ::square
 ---

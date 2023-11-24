@@ -1,8 +1,7 @@
 ---
 title: not knowing
 description: Knowing nothing is the first step to knowing anything.
-category:
-  - moments
+category: musings
 draft: true
 layout: article
 date: 2023-09-24 23:00:00

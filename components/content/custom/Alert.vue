@@ -1,16 +1,10 @@
 <template>
-  <div
-    class="alert-container"
-    :class="type"
-  >
-    <div class="title-container">
-      <!-- <Icon :type="type" class="alert-icon" /> -->
-      <span class="title font-mono">
-        {{ title || type }}
-      </span>
-    </div>
-    <slot id="alert-content" />
-  </div>
+  <Callout class="alert-container">
+    <span class="title">
+      {{ title || type }}
+    </span>
+    <slot/>
+  </Callout>
 </template>
 
 <script lang="ts">
@@ -33,7 +27,7 @@ export default {
 </script>
 
 <style lang="sass">
-@use "@/styles/colors"
+@use "@/styles/other/colors"
 
 .alert-container
   margin: 1em 0
@@ -57,52 +51,17 @@ export default {
     display: flex
     flex-direction: row
 
-    .title
-      font-weight: 600
-      text-transform: uppercase
-      font-size: 0.8em
-      margin: 0em 0 0.5em 0
-      border-bottom: 1px dotted
-      opacity: 0.5
-      width: fit-content
+  .title
+    font-weight: 600
+    text-transform: uppercase
+    font-size: 0.8em
+    margin: 0em 0 0.5em 0
+    border-bottom: 1px dotted
+    opacity: 0.5
+    width: fit-content
 
   &:hover
-    & > .title-container > .title
+    & > .title
       opacity: 1
-
-  &.info
-    background-color: colors.color("info-background") !important
-    color: colors.color("info-foreground") !important
-
-    & > .paragraph
-      color: colors.color("info-foreground") !important
-
-  &.success
-    background-color: colors.color("success-background")
-    color: colors.color("success-foreground")
-
-    & > .paragraph
-      color: colors.color("success-foreground") !important
-
-  &.error
-    background-color: colors.color("error-background") !important
-    color: colors.color("error-foreground") !important
-
-    & > .paragraph
-      color: colors.color("error-foreground") !important
-
-  &.warning
-    background-color: colors.color("warning-background")
-    color: colors.color("warning-foreground")
-
-    & > .paragraph
-      color: colors.color("warning-foreground") !important
-
-  &.critical
-    background-color: colors.color("critical-background") !important
-    color: colors.color("critical-foreground") !important
-
-    & > .paragraph
-      color: colors.color("critical-foreground") !important
 
 </style>

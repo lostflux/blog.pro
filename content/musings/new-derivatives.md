@@ -2,7 +2,7 @@
 title: derivatives
 description: Finding new ideas in a creative block.
 category: musings
-date: 2023-10-24 23:00:00
+date: 2023-11-23 23:00:00
 ---
 
 <!-- # Try taking time out to just play with your field for your own enjoyment -->

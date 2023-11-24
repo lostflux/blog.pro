@@ -3,16 +3,9 @@ title: imposting
 description: Impostor syndrome...
 category: musings
 date: 2023-07-17 23:00:00
-
-head:
-  meta:
-    - name: 'keywords'
-      content: 'writing, poetry, moments, untold story'
-    - name: 'robots'
-      content: 'index, follow'
-    - name: 'author'
-      content: 'Amittai'
 ---
+
+## Sermon in the Suicide
 
 We tell ourselves stories in order to live.
 

@@ -1,20 +1,8 @@
 ---
 title: indirection
 description: The fundamental theorem of software engineering.
-category:
-  - aphorisms
-layout: article
+category: signals and threads
 date: 2023-07-26 23:00:00
-navigation: true
-
-head:
-  meta:
-    - name: 'keywords'
-      content: 'writing, poetry, moments, darkness'
-    - name: 'robots'
-      content: 'index, follow'
-    - name: 'author'
-      content: 'Amittai'
 ---
 
 :::square

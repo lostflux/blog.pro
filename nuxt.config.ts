@@ -50,6 +50,16 @@ export default defineNuxtConfig({
         'yaml'
       ]
     },
+    markdown: {
+      remarkPlugins: [
+        "remark-math",
+      ],
+      rehypePlugins: {
+        "rehype-katex": {
+          output: "html",
+        },
+      },
+    },
     // sources: {
     //   dev: {
     //     prefix: '/dev',

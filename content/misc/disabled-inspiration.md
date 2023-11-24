@@ -3,42 +3,8 @@ title: disabled inspiration
 description: |
   A short essay on the relationship between disability and inspiration.
   I wrote this for a college writing seminar.
-category:
-  - long-form
-  - life
-# draft: true
-featured: false
-imageUrl: ../cover.webp
-caption: |
-  If life transcends death <br/>
-  Then I will seek for you there. <br/>
-  If not, then there too.
-layout: article
-date: 2020-10-24
-# navigation: false
-
-head:
-  meta:
-    - name: 'description'
-      content: Given an arbitrary set of numbers, how do we most-efficiently find their smallest common multiple?
-    - name: 'keywords'
-      content: 'functional programming, lazy evaluation, tail recursion, generators, haskell, project euler'
-    - name: 'robots'
-      content: 'index, follow'
-    - name: 'author'
-      content: 'Amittai'
-    - name: 'copyright'
-      content: 'Amittai'
-    - property: 'og:title'
-      content: 'Efficient Multiple Discovery'
-    - property: 'og:description'
-      content: Problem-solving with Functional Programming Patterns.
-    - property: 'og:image'
-      content: /_ipx/_/writing/computing/exposition/cover.gif
-    - property: 'og:url'
-      content: 'https://amitt.ai/writing/computing/exposition/001-multiples-sum'
-    - name: 'twitter:card'
-      content: summary_large_image
+category: anonymous pipes
+date: 2020-10-24 23:00:00
 ---
 
 # Disabled People are More Than a Source of Inspiration

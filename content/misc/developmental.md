@@ -1,19 +1,9 @@
 ---
 title: developmental
 description: How Technology is Changing the Developing World.
-category:
-  - featured
-  - long-form
-  - technology
-draft: false
-featured: true
-imageUrl: ../cover.webp
-layout: article
-date: 2020-12-15
-navigation: true
+category: anonymous pipes
+date: 2020-12-15 23:00:00
 ---
-
-# Technology in the Developing World
 
 ## Abstract
 
@@ -54,7 +44,6 @@ addressing the technology gap and
 meeting their immediate technology needs?
 
 ![Emerging technologies are driving developments in upcoming countries.](./kenya-tech.webp)
-
 
 ### Technology Transfer
 

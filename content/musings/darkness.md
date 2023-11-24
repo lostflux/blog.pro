@@ -3,15 +3,6 @@ title: darkness
 subtitle: Darkness
 category: musings
 date: 2023-09-09 23:00:00
-
-head:
-  meta:
-    - name: 'keywords'
-      content: 'writing, poetry, moments, darkness'
-    - name: 'robots'
-      content: 'index, follow'
-    - name: 'author'
-      content: 'Amittai'
 ---
 
 :::square

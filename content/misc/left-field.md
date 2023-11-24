@@ -3,15 +3,8 @@ title: left field
 description:
   Growing up is changing, but doing so in a progressive and authentic
   sometimes requires hard conversations with yourself and disappointing a person or two.
-category:
-  - long-form
-  - life
-draft: true
-featured: true
-imageUrl: ../cover.gif
-layout: article
-date: 2020-07-15
-navigation: true
+category: anonymous pipes
+date: 2020-07-15 23:00:00
 ---
 
 # Let’s Talk about Optics

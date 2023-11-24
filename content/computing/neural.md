@@ -1,7 +1,8 @@
 ---
 title: neural
 description: data-driven behavior change
-date: 2021-03-14
+category: signals and threads
+date: 2021-03-14 23:00:00
 ---
 
 ChatGPT, AlphaFold, AlphaGo, the list of recent developments in Machine Learning

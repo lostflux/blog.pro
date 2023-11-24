@@ -3,6 +3,7 @@ title: abstract numbers
 description: The human condition.
 category: musings
 date: 2023-09-02 23:00:00
+featured: true
 ---
 
 I sometimes think about the inner workings of who I am and the transparency of my truth,

@@ -1,17 +1,8 @@
 ---
 title: space race
-subtitle: The New Space Race
 description: The Past, Present, and Future of Space Exploration.
-category:
-  - featured
-  - long-form
-  - alien worlds
-draft: false
-featured: true
-imageUrl: ../cover2.gif
-layout: article
-date: 2020-12-15
-navigation: true
+category: anonymous pipes
+date: 2020-12-15 23:00:00
 ---
 
 # The New Space Race

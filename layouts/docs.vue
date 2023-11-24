@@ -4,9 +4,9 @@
       <UPage>
         <template #left>
           <UAside>
-            <BranchSelect />
+            <!-- <BranchSelect /> -->
 
-            <UNavigationTree :links="mapContentNavigation(navigation)" />
+            <UNavigationTree :links="mapContentNavigation(navigation)" :multiple="false" default-open />
           </UAside>
         </template>
 
@@ -18,8 +18,5 @@
 
 <script setup lang="ts">
 import type { NavItem } from '@nuxt/content/dist/runtime/types'
-
-const nav = inject<Ref<NavItem[]>>('navigation')
-
-const navigation = computed(() => nav.value.filter(item => !item._path.startsWith('/pro')))
+const navigation = await fetchContentNavigation()
 </script>

@@ -3,15 +3,6 @@ title: multitudes
 description: Having confidence in self-contradiction.
 category: musings
 date: 2020-04-03 23:00:00
-
-head:
-  meta:
-    - name: 'keywords'
-      content: 'writing, poetry, moments'
-    - name: 'robots'
-      content: 'index, follow'
-    - name: 'author'
-      content: 'Amittai'
 ---
 
 :::square

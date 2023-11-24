@@ -1,7 +1,7 @@
 ---
 title: git erase
 description: How to rewrite your git history.
-layout: article
+category: signals and threads
 date: 2023-09-06 23:00:00
 ---
 
