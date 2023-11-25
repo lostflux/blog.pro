@@ -79,7 +79,7 @@ useHead({
     { key: 'theme-color', name: 'theme-color', content: color }
   ],
   link: [
-    { rel: 'icon', type: 'image/svg+xml', href: '/icon.svg' },
+    { rel: 'icon', type: 'image/svg+xml', href: 'https://amittai.studio/favicon.svg' },
     { rel: 'canonical', href: `https://ui.nuxt.com${withoutTrailingSlash(route.path)}` }
   ],
   htmlAttrs: {
@@ -88,8 +88,7 @@ useHead({
 })
 
 useServerSeoMeta({
-  ogSiteName: 'Nuxt UI',
-  twitterCard: 'summary_large_image'
+  ogSiteName: "Amittai's Blog",
 })
 
 // Provide

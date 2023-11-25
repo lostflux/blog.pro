@@ -2,18 +2,6 @@
 <template>
   <div>
     <ULandingHero :ui="{ base: 'relative z-[1]', container: 'max-w-4xl' }" class="mb-[calc(var(--header-height)*2)]">
-      <!-- <template #headline>
-        <UBadge variant="subtle" size="md" class="hover:bg-primary-100 dark:bg-primary-950/100 dark:hover:bg-primary-900 transition-color relative font-medium rounded-full shadow-none">
-          <NuxtLink :to="`https://github.com/nuxt/ui/releases/tag/v${config.version}`" target="_blank" class="focus:outline-none" tabindex="-1">
-            <span class="absolute inset-0" aria-hidden="true" />
-          </NuxtLink>
-
-          <span class="flex items-center gap-1">
-            Nuxt UI {{ config.version.split('.').slice(0, -1).join('.') }} is out!
-          </span>
-        </UBadge>
-      </template> -->
-
       <template #title>
         <span v-html="page?.hero?.title" />
       </template>
@@ -21,42 +9,12 @@
       <template #description>
         <span v-html="page?.hero?.description" />
       </template>
-
-      <!-- <template #links>
-        <UButton label="Get Started" icon="i-heroicons-rocket-launch" size="lg" to="/getting-started/installation" />
-
-        <UInput
-          v-model="source"
-          color="gray"
-          readonly
-          autocomplete="off"
-          icon="i-heroicons-command-line"
-          input-class="select-none"
-          aria-label="Install @nuxt/ui"
-          size="lg"
-          :ui="{ base: 'disabled:cursor-default', icon: { trailing: { pointer: '' } } }"
-        >
-          <template #trailing>
-            <UButton
-              aria-label="Copy Code"
-              :color="copied ? 'primary' : 'gray'"
-              variant="link"
-              size="2xs"
-              :icon="copied ? 'i-heroicons-clipboard-document-check' : 'i-heroicons-clipboard-document'"
-              @click="copy(source)"
-            />
-          </template>
-        </UInput>
-      </template> -->
-
       <ClientOnly>
         <HomeTetris />
       </ClientOnly>
     </ULandingHero>
 
     <ULandingSection>
-          <!-- <UPage> -->
-      <!-- <UPageBody> -->
         <UPageGrid>
           <!-- align select element to right of grid -->
           <USelectMenu
@@ -72,8 +30,6 @@
           />
         </UPageGrid>
         <UPageGrid>
-          <!-- {{ articles }} -->
-          <!-- filter selectors -->
           <UPageCard
             v-for="(article, index) in activeArticles"
             :key="index"
@@ -86,20 +42,8 @@
               description: 'line-clamp-2'
             }"
           >
-            <!-- <template #header>
-              <NuxtImg
-                :src="article.image || 'cover.gif'"
-                :alt="article.title || ''"
-                :loading="index === 0 ? 'eager' : 'lazy'"
-                class="object-cover object-top w-full h-full"
-                width="384"
-                height="192"
-              />
-            </template> -->
-
             <template #icon class="flex items-center justify-between w-full rounded-full bg-primary-100 dark:bg-primary-950/50">
               <UBadge :label="article.category" variant="subtle" />
-              <!-- <UBadge v-if="article.featured" label="Featured" variant="subtle" /> -->
             </template>
 
             <template #footer>
@@ -133,8 +77,8 @@ useSeoMeta({
   ogTitle: page.value.title,
   description: page.value.description,
   ogDescription: page.value.description,
-  ogImage: 'https://ui.nuxt.com/social-card.png',
-  twitterImage: 'https://ui.nuxt.com/social-card.png'
+  ogImage: page.value.image || '',
+  twitterImage: page.value.image || ''
 })
 
 // const { format } = Intl.NumberFormat('en-GB', { notation: 'compact' })
