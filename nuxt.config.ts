@@ -29,7 +29,31 @@ export default defineNuxtConfig({
     icons: ['heroicons', 'simple-icons'],
     safelistColors: excludeColors(colors)
   },
+  image: {
+    // The screen sizes predefined by `@nuxt/image-edge`:
+    screens: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536,
+      "2xl": 1536,
+    },
+    format: ["avif", "webp"],
+    provider: "ipx",
+    ipx: {},
+    dir: "static",
+  },
   content: {
+    sources: {
+      content: {
+        driver: 'github',
+        repo: 'siavava/content',
+        branch: 'main',
+        dir: 'content'
+      }
+    },
     highlight: {
       preload: [
         'bash',
@@ -124,10 +148,10 @@ export default defineNuxtConfig({
       exposed: false
     }
   },
-  cloudflareAnalytics: {
-    token: '1e2b0c5e9a214f0390b9b94e043d8d4c',
-    scriptPath: false
-  },
+  // cloudflareAnalytics: {
+  //   token: '1e2b0c5e9a214f0390b9b94e043d8d4c',
+  //   scriptPath: false
+  // },
   hooks: {
     // Related to https://github.com/nuxt/nuxt/pull/22558
     'components:extend': (components) => {

@@ -16,7 +16,7 @@
       <ColorPicker />
 
       <UTooltip text="Search" :shortcuts="[metaSymbol, 'K']">
-        <UDocsSearchButton :label="null" />
+        <UDocsSearchButton :label="searchLabel" />
       </UTooltip>
 
       <UColorModeButton />
@@ -70,9 +70,26 @@ defineProps<{
 const route = useRoute()
 const { metaSymbol } = useShortcuts()
 
-// const nav = inject<Ref<NavItem[]>>('navigation')
-
 const navigation = await fetchContentNavigation()
 
 const { data: page } = await useAsyncData(route.path, () => queryContent(route.path).findOne())
+
+const windowWidth = ref(0)
+const handleResize = () => {
+  windowWidth.value = window.innerWidth
+}
+onMounted(() => {
+  // add resize listener
+  handleResize()
+  window.addEventListener('resize', handleResize)
+})
+
+onBeforeUnmount(() => {
+  // remove resize listener
+  window.removeEventListener('resize', handleResize)
+})
+
+const searchLabel = computed(() => {
+  return windowWidth.value > 1024 ? 'Find by title or content' : ''
+})
 </script>

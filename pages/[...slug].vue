@@ -76,12 +76,12 @@ defineOgImage({
 const links = computed(() => [{
   icon: 'i-heroicons-pencil-square',
   label: 'Edit this page',
-  to: `https://github.com/siavava/blog/edit/content/${page?.value?._file}`,
+  to: `https://github.com/siavava/content/edit/main/content/${page?.value?._file}`,
   target: '_blank'
 }, {
   icon: 'i-heroicons-star',
   label: 'View on GitHub',
-  to: 'https://github.com/nuxt/ui',
+  to: 'https://github.com/siavava/content',
   target: '_blank'
 },{
   icon: 'i-heroicons-bars-3-bottom-right-solid',
