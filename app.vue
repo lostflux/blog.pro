@@ -7,10 +7,10 @@
       <NuxtPage />
     </NuxtLayout>
 
-    <AppFooter v-if="!$route.path.startsWith('/examples')" />
+    <Footer />
 
     <ClientOnly>
-      <LazyUDocsSearch ref="searchRef" :files="files" :navigation="navigation" :groups="groups" :links="links" />
+      <LazyUDocsSearch ref="searchRef" :files="files" :navigation="navigation" groups="" :links="links" />
     </ClientOnly>
 
     <!-- <UNotifications>
@@ -37,19 +37,7 @@ const { data: files } = useLazyFetch<ParsedContent[]>('/api/search.json', { defa
 
 // Computed
 
-const navigation = computed(() => {
-  if (branch.value?.name === 'dev') {
-    const dev = nav.value.find(item => item._path === '/dev')?.children
-    const pro = nav.value.find(item => item._path === '/pro')
-
-    return [
-      ...dev,
-      ...(pro ? [pro] : [])
-    ]
-  }
-
-  return nav.value.filter(item => item._path !== '/dev')
-})
+const navigation = computed(() => nav.value)
 
 const groups = computed(() => {
   if (route.path === '/') {

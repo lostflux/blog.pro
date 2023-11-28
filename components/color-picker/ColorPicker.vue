@@ -36,7 +36,7 @@ const primary = computed({
     return primaryColors.value.find(option => option.value === appConfig.ui.primary)
   },
   set (option) {
-    appConfig.ui.primary = option.value
+    appConfig.ui.primary = option?.value || "rose"
 
     window.localStorage.setItem('nuxt-ui-primary', appConfig.ui.primary)
   }
@@ -48,7 +48,7 @@ const gray = computed({
     return grayColors.value.find(option => option.value === appConfig.ui.gray)
   },
   set (option) {
-    appConfig.ui.gray = option.value
+    appConfig.ui.gray = option?.value || 'neutral'
 
     window.localStorage.setItem('nuxt-ui-gray', appConfig.ui.gray)
   }

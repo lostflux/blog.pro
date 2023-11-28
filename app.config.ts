@@ -13,8 +13,8 @@ export default defineAppConfig({
     // },
   ],
   ui: {
-    primary: 'green',
-    gray: 'slate',
+    primary: 'rose',
+    gray: 'neutral',
     content: {
       prose: {
         code: {

@@ -7,7 +7,7 @@
     }"
   >
     <template #left>
-      <NuxtLink to="/" class="flex items-end gap-1.5 font-bold text-xl text-gray-900 dark:text-white" aria-label="Nuxt UI">
+      <NuxtLink to="/" class="flex items-end gap-1.5 font-bold text-xl text-gray-900 dark:text-white" aria-label="logo">
         <Logo class="w-auto h-6" />
       </NuxtLink>
     </template>

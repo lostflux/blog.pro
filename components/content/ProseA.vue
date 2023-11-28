@@ -1,8 +1,6 @@
 <script setup lang="ts">
 defineProps({
   href: {
-    // type string or object
-    // type: [String, Object],
     type: String,
     default: "",
   },
@@ -18,7 +16,11 @@ defineProps({
     type: Boolean,
     default: false,
   },
-});
+})
+
+const colorMode = useColorMode()
+
+const color = computed(() => colorMode.value === 'dark' ? 'white' : '#18181b')
 </script>
 
 <template>
@@ -32,6 +34,9 @@ defineProps({
     <NuxtLink
       :href="href"
       :class="{'link': true, 'arrow': fancy}"
+      :style="{
+        color: color,
+      }"
     >
       <span class="link-text">
         <slot />
@@ -74,7 +79,11 @@ defineProps({
 
   &.fancy
     .link
-      color: colors.color(lightest-foreground)
+      // color: colors.color(lightest-foreground)
+      // color: rgb(var(--color-text-DEFAULT))
+
+      // use lighter text color
+      color: rgb(var(--color-primary-100))
 
   .link
     border-bottom: 1px transparent

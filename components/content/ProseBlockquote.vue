@@ -36,7 +36,6 @@
 </template>
 
 <script lang="ts">
-
 export default {
   name: "ProseBlockquote",
   props: {
@@ -76,7 +75,7 @@ export default {
   
 
   .author
-    border-top: 1px solid colors.color(lightest-background)
+    border-top: 1px solid rgb(var(--color-gray-700)) //colors.color(lightest-background)
     padding-top: 0.5em
     display: flex
     flex-direction: column
