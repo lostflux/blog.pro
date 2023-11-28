@@ -1,6 +1,6 @@
 <template>
   <UPage>
-    <UPageHeader :title="page.title" :description="page.description" :links="page.links" :headline="headline" />
+    <UPageHeader :title="page?.title" :description="page.description" :links="page.links" :headline="headline" />
 
     <UPageBody prose>
       <ContentRenderer v-if="page.body" :value="page" />
@@ -61,15 +61,15 @@ const headline = computed(() => page.value?.category || "")
 useSeoMeta({
   titleTemplate: '%s | amittai',
   title: page.value.title,
-  ogTitle: `${page.value.title} - Nuxt UI`,
-  description: page.value.description,
+  ogTitle: `${page.value.title} | amittai`,
+  description: page.value?.description || "",
   ogDescription: page.value.description
 })
 
 defineOgImage({
   component: 'Docs',
   title: page.value.title,
-  description: page.value.description,
+  description: page.value?.description || "",
   headline: headline.value
 })
 

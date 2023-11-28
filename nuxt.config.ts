@@ -18,7 +18,7 @@ export default defineNuxtConfig({
   modules: ['@nuxt/content', 'nuxt-og-image', // '@nuxt/devtools',
   // '@nuxthq/studio',
   // module,
-  '@nuxt/ui', '@nuxtjs/fontaine', '@nuxtjs/google-fonts', '@nuxtjs/plausible', '@vueuse/nuxt', 'nuxt-component-meta', 'nuxt-cloudflare-analytics', 'modules/content-examples-code', '@nuxt/image'],
+  '@nuxt/ui', '@nuxtjs/fontaine', '@nuxtjs/google-fonts', '@nuxtjs/plausible', '@vueuse/nuxt', 'nuxt-component-meta', '@nuxt/image'],
   runtimeConfig: {
     public: {
       version: pkg.version
@@ -148,10 +148,6 @@ export default defineNuxtConfig({
       exposed: false
     }
   },
-  // cloudflareAnalytics: {
-  //   token: '1e2b0c5e9a214f0390b9b94e043d8d4c',
-  //   scriptPath: false
-  // },
   hooks: {
     // Related to https://github.com/nuxt/nuxt/pull/22558
     'components:extend': (components) => {

@@ -57,7 +57,7 @@ defineProps({
         <span>{{ title }}</span>
       </h1>
       <p class="text-[32px] text-[#94a3b8] leading-tight">
-        {{ description.slice(0, 200) }}
+        {{ description?.slice(0, 200) || "this could be interesting..." }}
       </p>
     </div>
 
