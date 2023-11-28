@@ -20,7 +20,7 @@ defineProps({
 
 const colorMode = useColorMode()
 
-const color = computed(() => colorMode.value === 'dark' ? 'white' : '#18181b')
+const color2 = computed(() => colorMode.value === 'dark' ? 'white' : '#18181b')
 </script>
 
 <template>
@@ -34,9 +34,6 @@ const color = computed(() => colorMode.value === 'dark' ? 'white' : '#18181b')
     <NuxtLink
       :href="href"
       :class="{'link': true, 'arrow': fancy}"
-      :style="{
-        color: color,
-      }"
     >
       <span class="link-text">
         <slot />
@@ -83,7 +80,8 @@ const color = computed(() => colorMode.value === 'dark' ? 'white' : '#18181b')
       // color: rgb(var(--color-text-DEFAULT))
 
       // use lighter text color
-      color: rgb(var(--color-primary-100))
+      // color: rgb(var(--color-primary-100))
+      color: v-bind(color2)
 
   .link
     border-bottom: 1px transparent
